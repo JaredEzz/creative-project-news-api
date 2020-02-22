@@ -36,7 +36,7 @@ function updateResult(json) {
         results += '<a href="'+article.url+'">';
         results += '<p>'+article.title+'</p>';
         results += '</a>';
-        results += '<p style="font-size: 13px"><i>'+article.author+'</i>'+article.description+'</p>';
+        results += '<p style="font-size: 13px"><i>'+article.author+' - </i>'+article.description+'</p>';
     }
     results += '</div>';
     results += '</div>';
