@@ -28,7 +28,7 @@ function updateResult(json) {
     let results = [];
     results += '<div class="border mx-5 mb-5">';
     results += '<div class="px-3">';
-    results += '<p class="pt-2" style="font-size: 13px">About {json.totalResults} results</p>\n';
+    results += '<p class="pt-2" style="font-size: 13px">About'+json.totalResults+' results</p>\n';
     results += '</div>';
     results += '</div>';
 
