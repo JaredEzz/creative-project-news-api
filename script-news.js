@@ -36,10 +36,8 @@ function updateResult(json) {
         results += '<a href="'+article.url+'">';
         results += '<p>'+article.title+'</p>';
         results += '</a>';
-        results += '<p style="font-size: 13px"><i>Oct 2, 2018 -</i> Google may be the most popular choice in search engines, but here are 14 alternative search engines you can – and should – try.</p>';
+        results += '<p style="font-size: 13px"><i>'+article.author+'</i>'+article.description+'</p>';
     }
-
-
     results += '</div>';
     results += '</div>';
 
