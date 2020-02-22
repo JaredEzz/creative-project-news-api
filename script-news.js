@@ -2,24 +2,26 @@ function onClick(e) {
     e.preventDefault();
     // get form values
     let searchText = document.getElementById('search-text').value;
-    console.log(searchText);
+    console.log("Search Query: "+searchText);
 
-    // setup URL
-    let url = " http://newsapi.org/v2/everything?q="+searchText+"&from=2020-01-22&sortBy=publishedAt&apiKey=183d7f7754164e96962b602ce45a76a3"
-    // call API
-    fetch(url)
-        .then(function(response) {
-            // make sure the request was successful
-            if (response.status != 200) {
-                return {
-                    text: "Error calling the News API service: " + response.statusText
+    if(!searchText.empty()){
+        // setup URL
+        let url = " http://newsapi.org/v2/everything?q="+searchText+"&from=2020-01-22&sortBy=publishedAt&apiKey=183d7f7754164e96962b602ce45a76a3"
+        // call API
+        fetch(url)
+            .then(function(response) {
+                // make sure the request was successful
+                if (response.status != 200) {
+                    return {
+                        text: "Error calling the News API service: " + response.statusText
+                    }
                 }
-            }
-            return response.json();
-        }).then(function(json) {
-        // update DOM with response
-        updateResult(json);
-    });
+                return response.json();
+            }).then(function(json) {
+            // update DOM with response
+            updateResult(json);
+        });
+    }
 }
 
 function updateResult(json) {
