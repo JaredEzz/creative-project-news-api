@@ -28,7 +28,18 @@ function updateResult(json) {
     let results = [];
     results += '<div class="border mx-5 mb-5">';
     results += '<div class="px-3">';
-    results += '<p class="pt-2" style="font-size: 13px">About'+json.totalResults+' results</p>\n';
+    results += '<p class="pt-2" style="font-size: 13px">About '+json.totalResults+' total results</p>\n';
+    for (let i=0; i < json.articles.length; i++) {
+        let article = json.articles[i];
+        results += '<hr>';
+        results += '<p style="font-size: 10px; padding-bottom: 0">'+article.url+'<i class="fa fa-angle-down pl-2"></i></p>';
+        results += '<a href="'+article.url+'">';
+        results += '<p>'+article.title+'</p>';
+        results += '</a>';
+        results += '<p style="font-size: 13px"><i>Oct 2, 2018 -</i> Google may be the most popular choice in search engines, but here are 14 alternative search engines you can – and should – try.</p>';
+    }
+
+
     results += '</div>';
     results += '</div>';
 
