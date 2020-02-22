@@ -4,7 +4,7 @@ function onClick(e) {
     let searchText = document.getElementById('search-text').value;
     console.log("Search Query: "+searchText);
 
-    if(!searchText.empty()){
+    if(searchText !== ""){
         // setup URL
         let url = " http://newsapi.org/v2/everything?q="+searchText+"&from=2020-01-22&sortBy=publishedAt&apiKey=183d7f7754164e96962b602ce45a76a3"
         // call API
